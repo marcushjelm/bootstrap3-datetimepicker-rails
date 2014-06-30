@@ -356,6 +356,7 @@ THE SOFTWARE.
         },
 
         fillDate = function () {
+            if(!picker.options.pickDate) return;
             pMoment.lang(picker.options.language);
             var year = picker.viewDate.year(),
                 month = picker.viewDate.month(),
@@ -1102,6 +1103,7 @@ THE SOFTWARE.
                     return;
             }
             picker.widget.hide();
+            picker.widget.removeClass("picker-open");
             picker.viewMode = picker.startViewMode;
             showMode();
             picker.element.trigger({
